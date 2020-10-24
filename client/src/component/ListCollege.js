@@ -19,7 +19,8 @@ const ListCollege=()=>{
             <h3>Hii</h3>
             {collegeDetails?(
                 collegeDetails.map(ele=>
-                    <Link to="/studentdata">{ele.name}</Link>)
+                    <Link to="/studentdata">{ele.name}
+                    </Link>)
             ):(<div><h3>False</h3></div>)}
         </div>
     )

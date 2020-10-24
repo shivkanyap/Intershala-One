@@ -25,7 +25,23 @@ router.get('/state/:state_name',(req,res)=>{
     .then(college=>res.send(college))
     .catch(err=>res.send(err))
 })
+router.get('/:id',(req,res)=>{
+    const id=req.params.id
+    console.log(id,'in id')
+    College.findOne({_id:id})
+    .then(details=>{
+        if(details){
+            res.send(details)
+        }else{
+            res.send('404').send('In College Id error')
+        }
+       
+    })
+    .catch(err=>{
+        console.log(err)
+    })
 
+})
 module.exports={
     collegeRouter:router
 }
